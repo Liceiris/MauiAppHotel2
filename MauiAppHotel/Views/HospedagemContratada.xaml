@@ -3,41 +3,75 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
              x:Class="MauiAppHotel.Views.HospedagemContratada"  
              NavigationPage.HasNavigationBar="False"  
-             BackgroundColor="{StaticResource Gray600}">
+             BackgroundColor="{StaticResource Gray500}">
 
     <VerticalStackLayout VerticalOptions="CenterAndExpand">
 
-        <Label Text="Suíte super luxo"
-               TextColor="BlanchedAlmond"
-               FontFamily="AncizarSerif-Light"
-               FontSize="50"
-               HorizontalTextAlignment="Center"
-               />
+        <Label Text="✩Suíte super Luxo✩"  
+       FontFamily="AncizarSerif"  
+       FontSize="40"  
+       TextColor="AliceBlue"  
+       HorizontalOptions="Center">
 
-        <Frame Margin="10">
-            <HorizontalStackLayout>
+            <Label.Shadow>
+                <Shadow Brush="DarkMagenta"
+                Opacity="0.5"
+                Offset="2,2"
+                Radius="4"/>
 
-                <HorizontalStackLayout>
+            </Label.Shadow>
+        </Label>
 
-                    <Label Text="Adultos: "/>
-                    <Label Text="2" 
-                           TextColor="DarkMagenta" />
+        <Frame BackgroundColor="Black"
+       CornerRadius="15"
+       Padding="10"
+       Margin="10"
+       HasShadow="True"
+       BorderColor="DarkViolet">
 
-                </HorizontalStackLayout>
+            <Grid ColumnDefinitions="Auto, Auto">
 
-                <HorizontalStackLayout>
+                <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="Start"
+                             Spacing="5">
+                    
+                    <Label Text="Adultos:"
+                   TextColor="White"
+                   FontAttributes="Bold"/>
+                    
+                    <Label Text="2"
+                   TextColor="DarkMagenta"
+                   FontAttributes="Bold"
+                           Margin="8.5 ,0"/>
+                </StackLayout>
 
-                    <Label Text="Crianças: " />
+               
+                <StackLayout Orientation="Horizontal"
+                     Grid.Column="1"
+                     HorizontalOptions="End"
+                     Spacing="8">
+                    
+                    <Label Text="Crianças:"
+                           TextColor="White"
+                           FontAttributes="Bold"
+                            />
+                    
                     <Label Text="1"
-                           TextColor="DarkMagenta" />
-
-                </HorizontalStackLayout>
-                
-            </HorizontalStackLayout>
-            
+                   TextColor="DarkMagenta"
+                   FontAttributes="Bold"
+                        />
+                    
+                </StackLayout>
+            </Grid>
         </Frame>
-
-        <Frame Margin="10">
+        
+        <Frame BackgroundColor="Black"
+               CornerRadius="15"
+               Padding="15"
+               Margin="10"
+               HasShadow="True"
+               BorderColor="DarkViolet">
+            
             <Grid ColumnDefinitions="*, *, *"
                   RowDefinitions="Auto, Auto" >
 
@@ -63,13 +97,18 @@
 
                 <Label Grid.Row="1" 
                        Grid.Column="2"
-                       Text="5" />
+                       Text="3" />
 
             </Grid>
             
         </Frame>
 
-        <Frame Margin="10">
+        <Frame BackgroundColor="Black"
+               CornerRadius="15"
+               Padding="15"
+               Margin="10"
+               HasShadow="True"
+               BorderColor="DarkViolet">
 
             <HorizontalStackLayout>
 
@@ -80,13 +119,26 @@
             
         </Frame>
 
-        <Button Text="Voltar"
-                FontSize="18"
-                FontFamily="AncizarSerif"
-                TextColor="White"
-                BackgroundColor="DarkMagenta"
-                HorizontalOptions="Center" 
-                Clicked="Button_Clicked" />
+        <Button Text="voltar"
+                BackgroundColor="DarkViolet"  
+                TextColor="White"  
+                FontFamily="AncizarSerif-bold"  
+                FontSize="18"  
+                CornerRadius="18"  
+                HeightRequest="50"
+                Margin="10"
+                Clicked="Button_Clicked">
+            
+            <Button.Shadow>
+                <Shadow Brush="violet"
+                Opacity="0.3"  
+                Offset="4,4"  
+                Radius="8"
+                />
+                
+        
+            </Button.Shadow>
+        </Button>
 
     </VerticalStackLayout>  
     

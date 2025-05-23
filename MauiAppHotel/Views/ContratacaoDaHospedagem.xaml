@@ -1,108 +1,131 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiAppHotel.Views.ContratacaoDaHospedagem"
-             Title="ContratacaoHospedagem"
-             NavigationPage.HasNavigationBar="False"
-             BackgroundColor="{StaticResource Gray600}">
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"  
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
+             x:Class="MauiAppHotel.Views.ContratacaoDaHospedagem"  
+             Title="ContratacaoHospedagem"  
+             NavigationPage.HasNavigationBar="False"  
+             BackgroundColor="{StaticResource Gray500}">  
 
-    <VerticalStackLayout VerticalOptions="CenterAndExpand"
-                         Padding="10"
-                         Spacing="10">
+    <VerticalStackLayout VerticalOptions="CenterAndExpand"  
+                         Padding="6"  
+                         Spacing="15">  
 
-        <VerticalStackLayout Padding="10">
+        <VerticalStackLayout Padding="6">
 
-            <Label Text="Cálculo da Diária"
-                   FontFamily="AncizarSerif-Light"
-                   FontSize="50"
-                   TextColor="BlanchedAlmond"
-                   HorizontalOptions="Center"/>
+            <Label Text="Cálculo da Diária"  
+                   FontFamily="AncizarSerif"  
+                   FontSize="42"  
+                   TextColor="AliceBlue"  
+                   HorizontalOptions="Center"  
+                   LineBreakMode="NoWrap">
+                
+                <Label.Shadow>
+                    <Shadow Brush="DarkMagenta"
+                            Opacity="0.5"
+                            Offset="2,2"
+                            Radius="4"/>
 
-            <Frame Padding="10">
-                <VerticalStackLayout>
-                    <Grid RowDefinitions="Auto, Auto"
-                          ColumnDefinitions="*, *, 2*"
-                          >
+                </Label.Shadow>
+            </Label>
 
-                        <Label Grid.Row="0" Grid.Column="0"
-                               Text="Adultos:" />
+            <Frame Padding="20"
+                   BackgroundColor="Black"
+                   CornerRadius="15"
+                   BorderColor="DarkViolet">
 
-                        <Label Grid.Row="0" Grid.Column="1"
-                            TextColor="DarkMagenta"
-                               Text="{Binding Value}"
-                               BindingContext="{x:Reference stp_adultos}"/>
 
-                        <Stepper Grid.Row="0" Grid.Column="2"
-                                 x:Name="stp_adultos"
-                                 Minimum="0"
-                                 Maximum="10"
-                                 Increment="1" />
+                <VerticalStackLayout>  
+                    <Grid RowDefinitions="Auto, Auto"  
+                          ColumnDefinitions="*, *, 2*">  
 
-                        <Label Grid.Row="1" Grid.Column="0"
-                               Text="Crianças:" />
+                        <Label Grid.Row="0" Grid.Column="0"  
+                               Text="👨🏽Adultos:"   
+                               HorizontalOptions="Center"/>  
 
-                        <Label Grid.Row="1" Grid.Column="1"
-                               TextColor="DarkMagenta"
-                               Text="{Binding Value}"
-                               BindingContext="{x:Reference stp_criancas}"/>
+                        <Label Grid.Row="0" Grid.Column="1"  
+                               TextColor="DarkViolet"  
+                               Text="{Binding Value}"  
+                               BindingContext="{x:Reference stp_adultos}"/>  
 
-                        <Stepper Grid.Row="1" Grid.Column="2"
-                                 x:Name="stp_criancas"
-                                 Minimum="0"
-                                 Maximum="10"
-                                 Increment="1" />
-                    </Grid>
+                        <Stepper Grid.Row="0" Grid.Column="2"  
+                                 x:Name="stp_adultos"  
+                                 Minimum="0"  
+                                 Maximum="10"  
+                                 Increment="1" />  
 
-                    <Frame Padding="10" Margin="10">
-                        <VerticalStackLayout>
+                        <Label Grid.Row="1" Grid.Column="0"  
+                               Text="👶🏼Crianças:"  
+                               HorizontalOptions="Center"/>
 
-                            <Label Text="Escolha sua Suíte"
-                                   TextTransform="Uppercase"
-                                   FontSize="Subtitle"
-                                   TextColor="DarkMagenta"/>
+                        <Label Grid.Row="1" Grid.Column="1"  
+                               TextColor="DarkViolet"  
+                               Text="{Binding Value}"  
+                               BindingContext="{x:Reference stp_criancas}"/>  
 
-                            <Picker x:Name="pck_quarto"
-                                    Title="Selecione sua Acomodação"
-                                    ItemDisplayBinding="{Binding Descricao}"/>
-                        </VerticalStackLayout>
-                    </Frame>
+                        <Stepper Grid.Row="1" Grid.Column="2"  
+                                 x:Name="stp_criancas"  
+                                 Minimum="0"  
+                                 Maximum="10"  
+                                 Increment="1" />  
+                    </Grid>  
 
-                    <Frame Padding="10"
-                           Margin="10">
-                        <VerticalStackLayout Spacing="10">
+                    <Frame Padding="10" Margin="10">  
+                        <VerticalStackLayout>  
 
-                            <Label Text="Período da Estadia"
-                                   TextTransform="Uppercase"
-                                   FontSize="Subtitle"
-                                   TextColor="DarkMagenta"/>
+                            <Label Text="Escolha sua Suíte"  
+                                   TextTransform="Uppercase"  
+                                   FontSize="Subtitle"  
+                                   TextColor="DarkViolet"/>  
 
-                            <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
-                                <Label Text="Check-in: " />
-                                <DatePicker x:Name="dtpck_checkin"
-                                            Format="dd/MM/yyyy"
-                                            DateSelected="dtpck_checkin_DateSelected" />
-                            </HorizontalStackLayout>
+                            <Picker x:Name="pck_quarto"  
+                                    Title="Selecione sua Acomodação"  
+                                    ItemDisplayBinding="{Binding Descricao}"/>  
+                        </VerticalStackLayout>  
+                    </Frame>  
 
-                            <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
-                                <Label Text="Check-out: " />
-                                <DatePicker x:Name="dtpck_checkout"
-                                            Format="dd/MM/yyyy" />
-                            </HorizontalStackLayout>
-                        </VerticalStackLayout>
-                    </Frame>
+                    <Frame Padding="10"  
+                           Margin="10">  
+                        <VerticalStackLayout Spacing="10">  
 
-                    <Button Text="Avançar" Clicked="Button_Clicked"
-                            BackgroundColor="DarkMagenta"
-                            TextColor="Wheat"
-                            FontAttributes="Bold"
-                            CornerRadius="10"
-                            HeightRequest="50"/>
-                    
-                  
-                </VerticalStackLayout>
-            </Frame>
+                            <Label Text="Período da Estadia"  
+                                   TextTransform="Uppercase"  
+                                   FontSize="Subtitle"  
+                                   TextColor="DarkViolet"/>  
 
-        </VerticalStackLayout>
-    </VerticalStackLayout>
+                            <HorizontalStackLayout HorizontalOptions="CenterAndExpand">  
+                                <Label Text="Check-in: " />  
+                                <DatePicker x:Name="dtpck_checkin"  
+                                            Format="dd/MM/yyyy"  
+                                            DateSelected="dtpck_checkin_DateSelected" />  
+                            </HorizontalStackLayout>  
+
+                            <HorizontalStackLayout HorizontalOptions="CenterAndExpand">  
+                                <Label Text="Check-out: " />  
+                                <DatePicker x:Name="dtpck_checkout"  
+                                            Format="dd/MM/yyyy" />  
+                            </HorizontalStackLayout>  
+                        </VerticalStackLayout>  
+                    </Frame>  
+
+                    <Button Text="Avançar" Clicked="Button_Clicked"   
+                            BackgroundColor="DarkViolet"  
+                            TextColor="White"  
+                            FontFamily="AncizarSerif-bold"  
+                            FontSize="18"  
+                            CornerRadius="15"  
+                            HeightRequest="50">  
+                        <Button.Shadow>  
+                            <Shadow Brush="violet"
+                                    Opacity="0.3"  
+                                    Offset="4,4"  
+                                    Radius="8" />  
+                        </Button.Shadow>  
+                    </Button>  
+
+                </VerticalStackLayout>  
+            </Frame>  
+
+        </VerticalStackLayout>  
+    </VerticalStackLayout>  
 
 </ContentPage>
