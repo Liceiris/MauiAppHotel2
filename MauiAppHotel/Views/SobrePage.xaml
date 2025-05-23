@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.SobrePage"
+             Title="Sobre" 
+ NavigationPage.HasNavigationBar="False" 
+             BackgroundColor="{StaticResource Gray500}">
+
+    <VerticalStackLayout Padding="20">
+        <Label Text="✩Sobre a Dev✩"  
+               FontFamily="AncizarSerif"  
+               FontSize="40"  
+               TextColor="AliceBlue"  
+               HorizontalOptions="Center">
+            <Label.Shadow>
+            <Shadow Brush="DarkMagenta"
+                Opacity="0.5"
+                Offset="2,2"
+                Radius="4"/>
+
+        </Label.Shadow>
+        </Label>
+
+
+        <Frame BackgroundColor="Black"
+               CornerRadius="20"
+               Padding="20"
+               BorderColor="DarkViolet"
+               HasShadow="True">
+
+            <VerticalStackLayout Spacing="10">
+                <Label Text="Desenvolvido por:"
+                       FontSize="18"
+                       FontAttributes="Bold"
+                       TextColor="White"/>
+
+                <Label Text="Alice Iris dos Santos"
+                       FontSize="15"
+                       TextColor="DarkMagenta" />
+
+                <Label Text="Data do Desenvolvimento do app:"
+                       FontSize="18"
+                       FontAttributes="Bold"
+                       TextColor="White" />
+
+                <Label Text="23/05/2025"
+                       FontSize="15"
+                       TextColor="DarkMagenta" />
+                
+                <Label Text="Um pouco sobre a Alice"
+                       FontSize="18"
+                       FontAttributes="Bold"
+                       TextColor="White"  />
+
+                <Label Text="Sou Alice Iris dos Santos, estudante de Desenvolvimento de Sistemas na ETEC de Praia Grande. Amo tecnologia, tenho um estilo marcante e um lado artístico forte. Sou dedicada, prestativa, e busco equilíbrio entre meus sonhos e minha vida pessoal. Cuido da saúde com treinos e alimentação equilibrada. Sigo evoluindo com garra e criatividade. ✧ "
+                       FontSize="15"
+                       TextColor="White"/>
+
+            </VerticalStackLayout>
+
+        </Frame>
+
+        <Button Text="Voltar"
+                  BackgroundColor="DarkViolet"  
+                  TextColor="White"  
+                  FontFamily="AncizarSerif-bold"  
+                  FontSize="18"  
+                  CornerRadius="18"  
+                  HeightRequest="50"
+                  Margin="10"
+                  Clicked="Button_Clicked">
+
+            <Button.Shadow>
+                <Shadow Brush="violet"
+        Opacity="0.3"  
+        Offset="4,4"  
+        Radius="8"
+        />
+
+            </Button.Shadow>
+        </Button>
+
+    </VerticalStackLayout>
+
+</ContentPage>
