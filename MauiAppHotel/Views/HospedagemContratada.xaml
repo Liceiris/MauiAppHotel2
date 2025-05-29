@@ -83,9 +83,6 @@
                        Grid.Column="1"
                        Text="Check-out: " />
 
-                <Label Grid.Row="0" 
-                       Grid.Column="2"
-                       Text="Estadia: " />
 
                 <Label Grid.Row="1" 
                        Grid.Column="0"
