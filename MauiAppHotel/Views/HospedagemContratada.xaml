@@ -7,7 +7,7 @@
 
     <VerticalStackLayout VerticalOptions="CenterAndExpand">
 
-        <Label Text="✩Suíte super Luxo✩"  
+        <Label Text="{Binding QuartoSelecionado.Descricao}"  
        FontFamily="AncizarSerif"  
        FontSize="40"  
        TextColor="AliceBlue"  
@@ -39,7 +39,7 @@
                    TextColor="White"
                    FontAttributes="Bold"/>
                     
-                    <Label Text="2"
+                    <Label Text="{Binding QntAdultos}"
                    TextColor="DarkMagenta"
                    FontAttributes="Bold"
                            Margin="8.5 ,0"/>
@@ -56,7 +56,7 @@
                            FontAttributes="Bold"
                             />
                     
-                    <Label Text="1"
+                    <Label Text="{Binding QntCriancas}"
                    TextColor="DarkMagenta"
                    FontAttributes="Bold"
                         />
@@ -83,18 +83,24 @@
                        Grid.Column="1"
                        Text="Check-out: " />
 
+                <Label Grid.Row="0" 
+                       Grid.Column="2"
+                       Text="Estadia: " />
 
                 <Label Grid.Row="1" 
                        Grid.Column="0"
-                      Text="27/05/2025 " />
+                      Text="{Binding DataCheckIn, StringFormat='{}{0:dd/MM/yyyy}'}"
+                       TextColor="DarkMagenta"/>
 
                 <Label Grid.Row="1" 
                        Grid.Column="1"
-                       Text="30/05/2025" />
+                       Text="{Binding DataCheckOut, StringFormat='{}{0:dd/MM/yyyy}'}" 
+                       TextColor="DarkMagenta"/>
 
                 <Label Grid.Row="1" 
                        Grid.Column="2"
-                       Text="3" />
+                       Text="{Binding Estadia}"
+                       TextColor="DarkMagenta"/>
 
             </Grid>
             
@@ -107,10 +113,11 @@
                HasShadow="True"
                BorderColor="DarkViolet">
 
-            <HorizontalStackLayout>
+            <HorizontalStackLayout HorizontalOptions="Center">
 
                 <Label Text="Valor total:" />
-                <Label Text="R$ 750,00" /> 
+                <Label Text="{Binding ValorTotal, StringFormat='{}{0:c'}"
+                       TextColor="DarkMagenta"/> 
 
             </HorizontalStackLayout>
             
